@@ -63,7 +63,7 @@ td:last-child, th:last-child {
 th {
     border-top: 1px solid rgba(0,0,0,0.1);
     border-right: 1px solid rgba(0,0,0,0.1);
-    background-color: #108391;
+    background-color: #34cccc;
     color: #fff;
     text-shadow: 0px -1px 0px rgba(0,0,0,0.2);
     font-weight: normal;
@@ -95,11 +95,11 @@ td:nth-child(even)>span {
 }
 td:last-child>span,
 td:nth-child(6)>span {
-    color: #108391;
+    color: #34cccc;
 }
 td.avui>span {
     font-weight: bold;
-    background-color: #108391;
+    background-color: #34cccc;
     color: #fff;
     border: 2px solid rgba(0,0,0,0.1);
 }
@@ -107,7 +107,7 @@ td.fora > span {
     opacity: 0.2;
 }
 td > span:hover {
-    background: #3FC1D1;
+    background: #9ae6e6;
     color: #fff;
 }
 .boto-next, .boto-prev {
@@ -279,9 +279,9 @@ function calendari(widget, data)
 			  data.getMonth(),
 			  -inici_mes);
 
-    /* 6 setmanes per cobrir totes les posiblitats
-     *  Quedaria mes consistent alhora de mostrar molts mesos 
-     *  en una quadricula */
+    /* 6 weeks to cover all possibilities
+     *  Quedaria mes consistent alhora de mostrar molts mesos // It would be more consistent while showing many months
+     *  en una quadricula // in a quadricula */
     for(var s = 0; s < 6; s++)
     {
         var fila = document.createElement('tr');
@@ -298,7 +298,7 @@ function calendari(widget, data)
             if(actual.getMonth() !== data.getMonth())
                 cela.className = 'fora';
 
-            /* Si es avui el decorem */
+            /* if today, decorate */
             if(data.getDate() == actual.getDate() &&
 	       data.getMonth() == actual.getMonth())
 		cela.className = 'avui';
